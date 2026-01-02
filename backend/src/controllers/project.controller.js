@@ -4,7 +4,7 @@ const logAudit = require('../utils/auditLogger');
 
 exports.createProject = async (req, res) => {
   const { name, description } = req.body;
-  const tenantId = req.user.tenantId; // ✅ FIXED HERE
+  const tenantId = req.user.tenantId; 
 
   if (!name) {
     return res.status(400).json({
