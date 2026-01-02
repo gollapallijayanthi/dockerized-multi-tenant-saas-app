@@ -26,7 +26,7 @@ module.exports = async (req, res, next) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // 🔴 THIS WAS MISSING
+    
     req.user = {
         userId: decoded.userId || decoded.user_id,
         tenantId: decoded.tenantId || decoded.tenant_id,
