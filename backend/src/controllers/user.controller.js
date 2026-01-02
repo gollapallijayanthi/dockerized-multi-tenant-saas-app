@@ -9,7 +9,7 @@ const logAudit = require('../utils/auditLogger');
 //   const { email, password, fullName, role } = req.body;
 //   const { tenantId } = req.user;
 
-//   // ✅ SAFETY VALIDATION (VERY IMPORTANT)
+//   //  SAFETY VALIDATION (VERY IMPORT
 //   if (!email || !password || !fullName || !role) {
 //     return res.status(400).json({
 //       success: false,
@@ -41,10 +41,10 @@ const logAudit = require('../utils/auditLogger');
 //   const { email, fullName, password, role } = req.body;
 //   const { tenantId, userId } = req.user;
 
-//   // 1️⃣ Hash password
+//   //  Hash password
 //   const passwordHash = await hashPassword(password);
 
-//   // 2️⃣ Insert user AND get ID
+//   //  Insert user AND get ID
 //   const result = await db.query(
 //     `INSERT INTO users (email, full_name, password_hash, role, tenant_id)
 //      VALUES ($1, $2, $3, $4, $5)
@@ -52,10 +52,10 @@ const logAudit = require('../utils/auditLogger');
 //     [email, fullName, passwordHash, role, tenantId]
 //   );
 
-//   // ✅ THIS IS THE MISSING LINE
+//   //  THIS IS THE MISSING LINE
 //   const newUserId = result.rows[0].id;
 
-//   // 3️⃣ Audit log (NOW SAFE)
+//   //  Audit log (NOW SAFE)
 //   await logAudit({
 //     userId,
 //     tenantId,
@@ -64,7 +64,7 @@ const logAudit = require('../utils/auditLogger');
 //     entityId: newUserId
 //   });
 
-//   // 4️⃣ Response
+//   //  Response
 //   res.status(201).json({
 //     success: true,
 //     message: 'User created successfully'
@@ -75,10 +75,10 @@ exports.createUser = async (req, res) => {
   const { email, fullName, password, role } = req.body;
   const { tenantId, userId } = req.user;
 
-  // 1️⃣ Hash password
+  //  Hash password
   const passwordHash = await hashPassword(password);
 
-  // 2️⃣ Insert user AND get ID
+  //  Insert user AND get ID
   const result = await db.query(
     `INSERT INTO users (email, full_name, password_hash, role, tenant_id)
      VALUES ($1, $2, $3, $4, $5)
@@ -86,10 +86,10 @@ exports.createUser = async (req, res) => {
     [email, fullName, passwordHash, role, tenantId]
   );
 
-  // ✅ THIS IS THE MISSING LINE
+  //  THIS IS THE MISSING LINE
   const newUserId = result.rows[0].id;
 
-  // 3️⃣ Audit log (NOW SAFE)
+  //  Audit log (NOW SAFE)
   await logAudit({
     userId,
     tenantId,
@@ -98,7 +98,7 @@ exports.createUser = async (req, res) => {
     entityId: newUserId
   });
 
-  // 4️⃣ Response
+  //  Response
   res.status(201).json({
     success: true,
     message: 'User created successfully'
