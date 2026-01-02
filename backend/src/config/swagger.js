@@ -28,7 +28,7 @@ const options = {
       }
     ],
 
-    /* 👇 ADD THIS PART */
+    
     paths: {
       '/api/projects': {
         post: {
@@ -257,7 +257,7 @@ const options = {
 
 
     }
-    /* 👆 END */
+    
   },
 
   apis: ['./src/routes/*.js']
