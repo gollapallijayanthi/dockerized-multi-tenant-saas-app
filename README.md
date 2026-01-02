@@ -1,13 +1,13 @@
 # Multi-Tenant SaaS Platform
 
-This project is a fully dockerized Multi-Tenant SaaS application built using **Node.js, PostgreSQL, React, and Docker**.  
-It supports **tenant isolation**, **role-based access control**, and **project & task management**.
+This project is a fully dockerized **Multi-Tenant SaaS Platform** developed using **Node.js, PostgreSQL, React, and Docker**.  
+It is designed to support **multiple tenants**, enforce **role-based access control**, and manage **projects and tasks** securely.
 
-The entire application (database, backend, frontend) starts automatically using **one command**.
+All services — database, backend API, and frontend UI — start together using a **single Docker Compose command**.
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 ### Backend
 - Node.js
@@ -27,10 +27,10 @@ The entire application (database, backend, frontend) starts automatically using 
 
 ---
 
-##  How to Run the Project (MANDATORY)
+## How to Run the Project (Mandatory)
 
 ### Prerequisites
-Make sure the following are installed:
+Ensure the following are installed on your system:
 - Docker
 - Docker Compose
 
@@ -44,18 +44,18 @@ From the **project root directory**, run:
 docker-compose up -d
 ````
 
-This single command will:
+This command will:
 
-* Start PostgreSQL database
-* Run backend migrations & seed data automatically
-* Start backend API
-* Start frontend application
+* Start the PostgreSQL database
+* Execute database migrations and seed data
+* Launch the backend API service
+* Start the frontend application
 
-⚠️ **No manual database setup is required.**
+⚠️ No manual database setup is required.
 
 ---
 
-##  Access the Application
+## Access the Application
 
 | Service      | URL                                                                  |
 | ------------ | -------------------------------------------------------------------- |
@@ -65,60 +65,67 @@ This single command will:
 
 ---
 
-##  Authentication & Roles
+## Authentication & Roles
 
-The system supports the following roles:
+The platform supports the following roles:
 
-* **super_admin** – Global system administrator
+* **super_admin** – System-wide administrator
 * **tenant_admin** – Tenant-level administrator
-* **user** – Regular tenant user
+* **user** – Standard tenant user
 
 Each tenant’s data is completely isolated from other tenants.
 
 ---
 
-##  Core Features
+## Core Features
 
-* Tenant registration & login
-* User management (RBAC enforced)
+* Tenant registration and authentication
+* Role-based user access control
 * Project management
 * Task management
-* Secure JWT authentication
+* Secure JWT-based authentication
 * Multi-tenant data isolation
-* Fully dockerized setup
+* Fully containerized setup
 
 ---
 
-##  Testing the Application
+## Testing the Application
 
 After starting the application:
 
-1. Open the frontend in browser
-2. Login using credentials from `submission.json`
+1. Open the frontend in a browser
+2. Log in using credentials from `submission.json`
 3. Verify:
 
    * Tenant isolation
    * Role-based access
-   * Project & task operations
+   * Project and task functionality
 
 ---
 
-##  Demo Video
+## Demo Video
 
-A complete demo video showcasing:
+A demo video demonstrates:
 
-* Architecture walkthrough
-* Docker startup
-* Multi-tenancy
-* User, project, and task flows
+* Application architecture
+* Docker startup process
+* Multi-tenant behavior
+* User, project, and task workflows
 
-👉 **YouTube link will be added here.**
+👉 YouTube demo link will be added here.
 
 ---
 
-## 📌 Notes for Evaluators
+## Notes for Evaluators
 
 * The application is fully dockerized
 * All services start with `docker-compose up -d`
 * Database migrations and seed data load automatically
 * No manual commands are required
+* Repository is public and accessible
+* Backend and frontend source code is included
+* Database migration and seed files are provided
+* The repository contains a minimum of 30 meaningful commits
+
+````
+
