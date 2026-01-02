@@ -1,7 +1,7 @@
 const db = require('../config/db');
 const { comparePassword } = require('../utils/password');
 const { signToken } = require('../utils/jwt');
-const logAudit = require('../utils/auditLogger'); // ✅ ADD THIS
+const logAudit = require('../utils/auditLogger'); 
 
 exports.login = async (req, res) => {
   const { email, password, tenantSubdomain } = req.body;
