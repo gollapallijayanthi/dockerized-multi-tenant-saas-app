@@ -5,7 +5,7 @@ const logAudit = require('../utils/auditLogger');
 // exports.createTask = async (req, res) => {
 //   const { projectId, title, description } = req.body;
 
-//   // 👇 generate task ID once
+//   
 //   const taskId = uuidv4();
 
 //   await db.query(
@@ -13,7 +13,7 @@ const logAudit = require('../utils/auditLogger');
 //     [taskId, projectId, title, description]
 //   );
 
-//   // 👇 ADDED AUDIT LOG (after successful insert)
+//   
 //   await logAudit({
 //     userId: req.user.userId,
 //     tenantId: req.user.tenantId,
