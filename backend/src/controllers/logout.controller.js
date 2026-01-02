@@ -11,7 +11,7 @@ exports.logout = async (req, res) => {
     [uuidv4(), token]
   );
 
-  // 👇 ADDED AUDIT LOG (before response)
+  
   await logAudit({
   userId: req.user.userId,
   tenantId: req.user.tenantId,
